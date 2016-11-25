@@ -11,7 +11,7 @@ cv::Mat tp3::histo(const cv::Mat& oImage, size_t N) {
 		for (int j = 0; j < oImage.cols; j++)
 		{
 			
-			cv::Vec3b intensity = oImage.at<cv::Vec3b>(cv::Point(j, i));
+			cv::Vec3b intensity = oImage.at<cv::Vec3b>(cv::Point(i, j));
 			for (int k = 0; k < oImage.channels(); ++k) {
 				oHist.at<float>(k, intensity[k]) += (1.0f / (oImage.cols * oImage.rows));
 			}
